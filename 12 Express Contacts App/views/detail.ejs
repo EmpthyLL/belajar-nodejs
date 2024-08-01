@@ -1,0 +1,19 @@
+<h1>Detail User</h1>
+<% if (user) { %>
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h2 class="card-title"><%= user.nama %>(<%= user.usia %>)</h2>
+            <h4 class="card-subtitle"><%= user.kerja %></h4>
+            <h6 class="card-text">No. HP : <%= user.nohp %></h6>
+            <p class="card-text" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium delectus veniam cupiditate aspernatur, excepturi, architecto obcaecati mollitia minima at nobis ullam error accusamus quaerat iste fuga tempore voluptatibus labore cum autem libero saepe earum voluptate. Fuga natus fugiat voluptatem ad nobis obcaecati molestias. Repellendus, magni.</p>
+            <a href="/contact/edit/<%= key %>" class="btn btn-info badge">Ubah</a>
+            <a href="/contact/delete/<%= key %>" onclick="return confirm('Anda yakin?')" class="btn btn-danger badge">Hapus</a>
+            <a href="/contact" class="card-link d-block mt-2"><i class="bi bi-arrow-left"></i> Kembali ke Page Contact</a>
+            </div>
+    </div>
+<% } else { %>
+    <div class="alert alert-danger" role="alert">
+    Data user belum ada <a href="/contact" class="alert-link">Kembali ke Page Contact</a>. 
+    </div>
+<% } %>
+ 

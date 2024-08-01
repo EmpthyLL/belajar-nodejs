@@ -1,0 +1,12 @@
+<h1>Hello, <%= nama %>!</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quibusdam consequuntur necessitatibus autem dolorum inventore magni nam laborum et quam.</p>
+<h3>Dafter Mahasiswa</h3>
+<% if (mahasiswa.length !== 0) { %>
+<ul>
+  <% mahasiswa.forEach(mhs => {%>
+    <li><%= mhs.nama %>(<%= mhs.umur %>)</li>
+  <%}); %>
+</ul>
+<% }else { %>
+  <p>Tidak ada data mahasiswa yang terdaftar</p>
+<% } %>

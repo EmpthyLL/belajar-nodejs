@@ -1,0 +1,50 @@
+<h1>Contact Us</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eum quas omnis numquam harum dolorem commodi aspernatur eius eveniet necessitatibus, sequi, at sit doloribus ratione quaerat! Magni nemo magnam eligendi!</p>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table">
+            <h4>Data Contact</h4>
+            <a href="/contact/add" class="btn btn-outline-primary mb-2">Tambahkan User</a>
+            <% if (addMsg.length !== 0) { %>
+                <div class="alert alert-success" role="alert">
+                <%= addMsg %>
+                </div>
+            <% } %>
+            <% if (delMsg.length !== 0) { %>
+                <div class="alert alert-info" role="alert">
+                <%= delMsg %>
+                </div>
+            <% } %>
+            <% if (editMsg.length !== 0) { %>
+                <div class="alert alert-success" role="alert">
+                <%= editMsg %>
+                </div>
+            <% } %>
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">No HP</th>
+                <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <% if (data.length !== 0) { %>
+                <tbody>
+                    <% data.forEach((d,key) => { %>
+                        <tr>
+                            <th scope="row"><%= key+1 %></th>
+                            <td><%= d.nama %></td>
+                            <td><%= d.nohp %></td>
+                            <td><a href="/contact/<%= key + 1 %>" class="btn btn-secondary badge"><i class="bi bi-eye"></i> Detail</a></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                </table>
+                <div class="alert alert-warning" role="alert">
+                Belum ada data user yang terdaftar!
+                </div>
+            <% } %> 
+    </div>
+</div>
